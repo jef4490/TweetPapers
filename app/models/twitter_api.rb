@@ -16,10 +16,9 @@ class TwitterApi
  end
 
 def user_timeline(params)
-  tweet_id = params[:id]
-  user_id = params[:user_id]
-  count = params[:count]
-  byebug
+  tweet_id = params[:id].to_i
+  user_id = params[:user_id].to_i
+  count = params[:count].to_i
   @client.user_timeline(user_id, {max_id: tweet_id, count: count})
 end
  # t.client.user_timeline(2437619918, count: 50)

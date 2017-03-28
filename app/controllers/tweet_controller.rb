@@ -9,8 +9,7 @@ class TweetController < ApplicationController
   def user_timeline
     twitterApi = TwitterApi.new
     timeline_object = twitterApi.user_timeline(params)
-    byebug
-    render json: tweet_object.to_json
+    render json: timeline_object.to_json
   end
 
 end
