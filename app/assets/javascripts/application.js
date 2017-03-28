@@ -16,14 +16,36 @@
 //= require_tree .
 
 function tweetStrip(tweet_link) {
-        return tweet_link.replace(/.*status\//g,"")
-      }
+  return tweet_link.replace(/.*status\//g,"")
+}
+
+function tweet_number(tweet) {
+ let start = /^\d*/g
+ let end = /\d*$/g
+ if (tweet.match(start) == false) {
+   return tweet.match(end)[0]
+ } else if (tweet.match(end) == false) {
+   return tweet.match(start)[0]
+ } else {
+   return console.log("alternate case")
+ }
+}
 
 $(document).ready(function(){
   $("#tweet-url-form").on('submit', function(event) {
     event.preventDefault();
+    var final = 12
+    let user = ""
     let url = tweetStrip($('#tweet-url-text').val())
-    debugger;
-    // $.getJSON(`tweets/`)
+    $.getJSON(`tweet/${url}`, function(data) {
+      user = data.user.id
+      return data
+    }).
+    then(function(data) {
+      return $.getJSON(`tweet/${url}/${user}/${final}`)
+    }).
+    then(function(tweet_timeline) {
+      debugger;
+    })
   });
 })
