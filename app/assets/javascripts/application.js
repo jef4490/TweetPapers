@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function tweetStrip(tweet_link) {
+        return tweet_link.replace(/.*status\//g,"")
+      }
+
+$(document).ready(function(){
+  $("#tweet-url-form").on('submit', function(event) {
+    event.preventDefault();
+    let url = tweetStrip($('#tweet-url-text').val())
+    debugger;
+    // $.getJSON(`tweets/`)
+  });
+})
