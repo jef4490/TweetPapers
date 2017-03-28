@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'root#index'
-  get 'get_tweet', to: 'root#get_tweet'
+
+  resources :tweet only: [:show]
 end
