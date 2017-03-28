@@ -11,4 +11,8 @@ class TwitterApi
    end
  end
 
+ def gather_tweet_data(tweet_number)
+   @client.status(tweet_number)
+ end
+
 end
