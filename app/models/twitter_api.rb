@@ -15,4 +15,15 @@ class TwitterApi
    @client.status(tweet_number)
  end
 
+def user_timeline(params)
+  tweet_id = params[:id].to_i
+  user_id = params[:user_id].to_i
+  count = params[:count].to_i
+  @client.user_timeline(user_id, {max_id: tweet_id, count: count})
+end
+ # t.client.user_timeline(2437619918, count: 50)
+ # t.client.user_timeline(2030711, {max_id: 846350257436983296})
+ # t.client.user_timeline(2030711, {max_id: 846350257436983296, count: 5}).first.text #=> "11. But the overall point is that the political economy debate is actually occurring among all groups, it just has different aesthetics."
+ # t.client.user_timeline(2030711, {max_id: 846351172680241154, count: 12}).last.text #=> "1. Trump"
+
 end
