@@ -38,7 +38,7 @@ function tweet_number(tweet) {
 var order_location = ""
 
 $(document).ready(function(){
-  $("#tweet-url-form").on('submit', function(event) {
+  $("#tweet-url-form").on('submit', function retrieveTweetPaper(event) {
     event.preventDefault();
     let final = 0
     let count = 0
