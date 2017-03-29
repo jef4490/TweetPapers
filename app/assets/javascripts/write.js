@@ -1,3 +1,3 @@
-$(document).ready(function() {
-  console.log("hi")
+$(".abcdef").ready(function() {
+  alert("hi")
 })
