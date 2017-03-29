@@ -3,6 +3,9 @@ class RootController < ApplicationController
   def index
   end
 
+  def write
+  end
+
   def get_tweet
     twitterApi = TwitterApi.new
     tweet_number = params[]
