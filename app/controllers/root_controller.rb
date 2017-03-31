@@ -7,7 +7,7 @@ class RootController < ApplicationController
   end
 
   def ghost
-    render html: "TwitterBot is waiting." 
+    render html: "Status: Ready" 
   end
 
   def get_tweet
