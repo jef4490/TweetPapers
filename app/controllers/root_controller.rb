@@ -6,6 +6,10 @@ class RootController < ApplicationController
   def write
   end
 
+  def ghost
+    render html: "TwitterBot is waiting." 
+  end
+
   def get_tweet
     twitterApi = TwitterApi.new
     tweet_number = params[]
