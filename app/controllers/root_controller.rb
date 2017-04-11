@@ -7,7 +7,7 @@ class RootController < ApplicationController
   end
 
   def ghost
-    render html: "Status: Ready" 
+    render html: "Status: Ready"
   end
 
   def get_tweet
